@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "address": "Lynn Location",
+        "street": "123 Washington street",
+        "city": "Jersey City",
+        "state": "New Jersey"
+    },
+    {
+        "id": 2,
+        "address": "Clint Location",
+        "street": "3 Smith street",
+        "city": "New York City",
+        "state": "New York"
+    },
+    {
+        "id": 3,
+        "address": "Myth Location",
+        "street": "13 Bringe street",
+        "city": "Menlo Park",
+        "state": "California"
+    }
+]
