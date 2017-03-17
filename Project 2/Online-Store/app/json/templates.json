@@ -1,0 +1,55 @@
+[
+	{
+		"id": 1,
+		"name": "Trip to France",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non tristique sapien, suscipit aliquam nibh.",
+		"type": "Family",
+		"price": "$19.99",
+		"images": [
+					{"name": "img1.jpg"},
+					{"name": "img6.jpg"}
+				] 	
+	},
+	{
+		"id": 2,
+		"name": "Trip to Greece",
+		"description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae",
+		"type": "Single",
+		"price": "$29.99",
+		"images": [
+					{
+						"name": "img3.jpg"
+					}
+				] 	
+	},
+	{
+		"id": 3,
+		"name": "Trip to Greenland",
+		"description": "Nulla posuere fermentum metus sit amet sollicitudin. Maecenas tincidunt dolor sit amet risus aliquet finibus",
+		"type": "Couple",
+		"price": "$31.99",
+		"images": [
+					{
+						"name": "img4.jpg"
+					},
+					{
+						"name": "img5.jpg"
+					}
+				] 	
+	},
+	{
+		"id": 4,
+		"name": "Trip to Venice",
+		"description": "Sed varius nibh ex, sit amet interdum ipsum semper eu. Donec nunc sapien, congue et quam ac",
+		"type": "Family",
+		"price": "$51.99",
+		"images": [
+					{
+						"name": "img2.jpg"
+					},
+					{
+						"name": "img7.jpg"
+					}
+				] 	
+	}
+]
