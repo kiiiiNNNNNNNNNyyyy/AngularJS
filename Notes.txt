@@ -1,0 +1,13 @@
+Model - The thing that defines our data.
+View - Whatever the user sees.
+They are both are binds to each other using controllers.
+
+Global Namespace - Instead of creating global variables you should create an object and add all those variables on that object, so that they don't interefere witth the variables of the same name defiend in othr files.
+
+Dependency Injections - Giving a function an object.
+
+All angular services starts with a '$' sign.
+
+Drectives - An instruction to angularjs to manipulate a piece of a DOM.
+
+The event loop - Anglar extends the javascript event loops like click, ketpress and all and also add some extended functionalities like watchers. 
