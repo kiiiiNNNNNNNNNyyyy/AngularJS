@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Corcoran</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+		#map_canvas {
+    		width: 100%;
+    		height: 500px;
+		}
+
+		.content{
+			height: 140px;
+		}
+
+		body{
+			font-family: 'Montserrat', sans-serif;
+		}
+
+		.top{
+			margin-top: 50px;
+		}
+
+		@media (max-width: 700px) {
+			h2{
+				font-size: 20px;
+			}
+
+			h3{
+				font-size: 15px;
+			}
+
+			h4{
+				font-size: 12px;
+			}
+			.center{
+				text-align: center;
+			}
+		}
+	</style>
+</head>
+<body ng-app='myApp'>	
+	<div></div>
+	<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Corcoran Project</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Properties and Map</a></li>
+            <li><a target="_blank" href="https://www.corcoran.com/">Corcoran Home</a></li>
+            <li><a target="_blank" href="https://www.corcoran.com/hamptons">The Hamptons</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Corcoran <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a target="_blank" href="http://www.arkadium.com/us/about/">About Corcoran</a></li>
+                <li><a target="_blank" href="https://www.corcoran.com/nyc/Search/Listings?SaleType=Sale">For Sale</a></li>
+                <li><a target="_blank" href="https://www.corcoran.com/nyc/Search/Listings?SaleType=Rent">For Rent</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Follow Corcoran</li>
+                <li><a target="_blank" href="https://www.facebook.com/thecorcorangroup/"><i class="fa fa-facebook"></i>&nbsp;Facebook</a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/company-beta/7178/"><i class="fa fa-linkedin"></i>&nbsp;LinkedIn</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Me<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a target="_blank" href="https://kiiiinnnnnnnnnyyyy.github.io/portfolio"><i class="fa fa-user"></i>&nbsp;Portfolio</a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/in/arjun-dass-3a3434106/"><i class="fa fa-linkedin"></i>&nbsp;LinkedIn</a></li>
+                <li><a target="_blank" href="https://github.com/kiiiiNNNNNNNNNyyyy"><i class="fa fa-github"></i>&nbsp;Github</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+	<div class="container top">
+		<div ng-controller="mainController">
+			<div ng-repeat="(key, val) in data">
+				<div ng-if="val.Listing.Transaction === rent">
+					<div class="row text-center">
+						<h2 class="alert alert-info">Apartment for Rent</h2>
+					</div>
+					<div class="row alert alert-success content">
+						<div class="col-xs-12">
+							<div class="col-md-10 col-xs-6"><h3 class="pull-left">{{ val.Property.Address.StreetNumber }}, {{ val.Property.Address.StreetName }}</h3></div>
+							<div class="col-md-2 col-xs-6"><h3>${{ price(val.Listing.Price) }}/month</h3></div>
+						</div>
+						<div class="col-xs-12 center">
+							<h4>&nbsp;&nbsp;&nbsp; This Apartment is for <strong>{{ val.Listing.Transaction }}</strong></h4>
+						</div>
+						<div class="col-md-12 col-xs-12 text-center" ng-if="val.Listing.OpenHouses.length > 0">
+							<h4>Open Houses: {{ month(val.Listing.OpenHouses[0].Date) | date: 'MMMM d' }} - {{ timeChange(val.Listing.OpenHouses[0].	StartTime) }} to {{ timeChange(val.Listing.OpenHouses[0].EndTime) }}</h4>
+							<br/>
+						</div>
+						<div class="col-md-12 text-center" ng-if="val.Listing.OpenHouses.length <= 0">
+							<h4>No Open houses available!!</h4>
+						</div>
+					</div>
+				</div>
+				<div ng-if="val.Listing.Transaction === sale">
+					<div class="row text-center">
+						<h2 class="alert alert-info">Apartment for Sale</h2>
+					</div>
+					<div class="row alert alert-warning content" >
+						<div class="co-xs-12">
+							<div class="col-md-10 col-xs-6"><h3>{{ val.Property.Address.StreetNumber }}, {{ val.Property.Address.StreetName }}</h3></div>
+							<div class="col-md-2 col-xs-6"><h3>${{ price(val.Listing.Price) }}</h3></div>
+							<div class="col-xs-12 center">
+								<h4> This Apartment is for <strong>{{ val.Listing.Transaction }}</strong></h4>
+							</div>
+							<div class="col-md-12 col-xs-12 text-center" ng-if="val.Listing.OpenHouses.length > 0">
+								<h4>Open Houses: {{ month(val.Listing.OpenHouses[0].Date) | date: 'MMMM d' }} - {{ timeChange(val.Listing.OpenHouses[0].	StartTime) }} to {{ timeChange(val.Listing.OpenHouses[0].EndTime) }}</h4>
+							</div>
+							<div class="col-md-12 text-center" ng-if="val.Listing.OpenHouses.length <= 0">
+								<h4>No Open houses available!!</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="map_canvas"></div>
+		</div>
+
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.6.4/angular-messages.min.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.6.4/angular-resource.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script> 
+	<script type="text/javascript" src="app.js"></script>   
+</body>
+</html>
