@@ -1,14 +1,98 @@
 [
-	{
-	"ID": "1",
-	"rulename": "Must be 5 Characters"
-	},
-	{
-	"ID": "2",
-	"rulename": "Must not be used elsewhere"
-	},
-	{
-	"ID": "3",
-	"rulename": "Must be cool"
-	}
+{
+    "Listing":{
+      "ID":123,
+      "Type":"Exclusive",
+      "Transaction":"Sale",
+      "Price":1000000,
+      "OpenHouses":[
+        {
+          "Date":"15/10/2020",
+          "StartTime":"8:00",
+          "EndTime":"14:00"
+        },
+        {
+          "Date":"14/10/2020",
+          "StartTime":"9:00",
+          "EndTime":"15:00"
+        },
+        {
+          "Date":"15/10/2010",
+          "StartTime":"8:00",
+          "EndTime":"14:00"
+        }
+      ]
+    },
+    "Property":{
+      "Address":{
+        "StreetNumber":660,
+        "StreetName":"Madison Avenue",
+        "City": "New York"
+      }
+    }
+  },
+  {
+    "Listing":{
+      "ID":124,
+      "Type":"Open",
+      "Transaction":"Rent",
+      "Price":10000,
+      "OpenHouses":[
+        {
+          "Date":"15/10/2020",
+          "StartTime":"8:00",
+          "EndTime":"14:00"
+        },
+        {
+          "Date":"14/10/2020",
+          "StartTime":"9:00",
+          "EndTime":"15:00"
+        },
+        {
+          "Date":"15/10/2010",
+          "StartTime":"8:00",
+          "EndTime":"14:00"
+        }
+      ]
+    },
+    "Property":{
+      "Address":{
+        "StreetNumber":860,
+        "StreetName":"Madison Avenue",
+        "City": "New York"
+      }
+    }
+  }
+  {
+    "Listing":{
+      "ID":125,
+      "Type":"Open",
+      "Transaction":"Rent",
+      "Price":30000,
+      "OpenHouses":[
+        {
+          "Date":"13/10/2020",
+          "StartTime":"5:00",
+          "EndTime":"11:00"
+        },
+        {
+          "Date":"14/10/2020",
+          "StartTime":"9:00",
+          "EndTime":"15:00"
+        },
+        {
+          "Date":"15/10/2010",
+          "StartTime":"8:00",
+          "EndTime":"14:00"
+        }
+      ]
+    },
+    "Property":{
+      "Address":{
+        "StreetNumber":85,
+        "StreetName":"Sherman Avenue",
+        "City": "Jersey City"
+      }
+    }
+  }
 ]

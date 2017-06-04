@@ -17,7 +17,12 @@ myApp.controller('mainController', ['$scope', '$http', '$filter', function($scop
 			+ $scope.data[i].Property.Address.City;
 			obj.address = address;
 			obj.city = $scope.data[i].Property.Address.City;
-			obj.desc = "For " + $scope.data[i].Listing.Transaction;
+			obj.desc = "This property is for " + $scope.data[i].Listing.Transaction;
+			if($scope.data[i].Listing.Transaction === "Rent"){
+				obj.price = "$" + $scope.price($scope.data[i].Listing.Price) + "/month";
+			}else if($scope.data[i].Listing.Transaction === "Sale"){
+				obj.price = "$" + $scope.price($scope.data[i].Listing.Price);
+			}
 			$scope.locations.push(obj);
 		}
 
@@ -28,33 +33,68 @@ myApp.controller('mainController', ['$scope', '$http', '$filter', function($scop
 			center: new google.maps.LatLng(40.0000, -98.0000),
 			mapTypeId: google.maps.MapTypeId.TERRAIN
 		};
+
 		map = new google.maps.Map($('#map_canvas')[0], myOptions);
 		console.log($scope.locations);
-		for (var x = 0; x < $scope.locations.length; x++) {
 
-			console.log($scope.locations[x].desc);
-			var content = "<div><p>Go to <a href='www.corcoran.com'>www.corcoran.com</a> to get more such properties.</p></div>";
+		var setMarker = function(latlng, content, hovercontent, address){
+			
+			var marker = new google.maps.Marker({
+				position: latlng,
+				map: map,
+				title: address
+			});
 
 			var infowindow = new google.maps.InfoWindow({
-          		content: content
-        	});
-
-			$.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+$scope.locations[x].address+'&sensor=false', null, function (data) {
-				var p = data.results[0].geometry.location
-				var latlng = new google.maps.LatLng(p.lat, p.lng);
-				var marker = new google.maps.Marker({
-					position: latlng,
-					map: map,
-					title: "Houses"
-				});
-
-				marker.addListener('click', function() {
-          			infowindow.open(map, marker);
-          			map.setZoom(15);
-          			map.setCenter(marker.getPosition())
-        		});
-
+				content: content
 			});
+
+			var hoverinfowindow = new google.maps.InfoWindow({
+				content: hovercontent
+			});
+
+			marker.addListener('click', function() {
+				hoverinfowindow.close()
+				infowindow.open(map, marker);
+				map.setZoom(15);
+				map.setCenter(marker.getPosition())
+			});
+
+			marker.addListener('mouseover', function() {
+				setTimeout(function() { hoverinfowindow.open(map, marker) }, 500);
+			});
+
+			marker.addListener('mouseout', function() {
+    			infowindow.close();
+    			hoverinfowindow.close();
+			});
+		}
+
+		for (var x = 0; x < $scope.locations.length; x++) {
+			console.log($scope.locations);
+			var address = $scope.locations[x].address;
+			var content = "<div><h4>" + $scope.locations[x].address + " <h4><p>" + $scope.locations[x].desc + " @ " + $scope.locations[x].price +"</p></div>";
+			var content2 = "<h3>" + $scope.locations[x].address + "</h3><p>Click the marker for more information!!</p>"
+			var infowindow = new google.maps.InfoWindow({
+				content: content
+			});
+
+			var hoverinfowindow = new google.maps.InfoWindow({
+				content: content2
+			});
+			var xyz = null;
+			$.ajax({ url: 'http://maps.googleapis.com/maps/api/geocode/json?address='+$scope.locations[x].address+'&sensor=false', 
+				async: false,
+				dataType: 'json',
+				success: function(data) {
+					xyz = data;
+				}
+			});
+			console.log(xyz);
+
+			var p = xyz.results[0].geometry.location
+			var latlng = new google.maps.LatLng(p.lat, p.lng);
+			setMarker(latlng, content, content2, );
 		}
 	});
 
