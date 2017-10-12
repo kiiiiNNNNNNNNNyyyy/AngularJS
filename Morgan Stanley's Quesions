@@ -1,0 +1,90 @@
+Q. Do you know CPM System? (Non-Technical)
+Ans. Corporate performance management. Its a term that describes the methodologies, metrics, processes and systems uesd to monitor and manage the business performance, of an enterprise.
+
+Q. How do you use an Interface? When do you use an interface and when would you use abstraction?
+Ans. By using the implements keyword. 
+
+Q. Can you implement quicksort algorithm ?
+Ans. Using a pivot and making a wall.
+
+Q. Implement two stacks using one array ?
+Ans. The idea is to start two stacks from two extreme corners of arr[]. stack1 starts from the leftmost element, the first element in stack1 is pushed at index 0. the stack2 starts from the rightmost corner, the first element in stack2 is pushed at index(n-1). Both stack grow in opposite direction. To check for overflow, all we need to check is for space between top elements of both stacks.
+
+Q. Apples and Oranges in a basket problem ?
+Ans. Say you pick a fruit from the basket labeled ‘Apples and Oranges’. If this fruit is an apple, then we know that since the label is incorrect, this basket only contains apples. Now that we’ve determined that the basket marked as ‘Apples and Oranges’ only contains apples, we can figure out what the other baskets contain. If we look at the basket labeled as ‘Oranges’, we know that since the label is incorrect, this basket either has only apples in it or has both apples and oranges. Since we’ve already established that the basket labeled ‘Apples and Oranges’ contains only apples, we know that the basket labeled as ‘Oranges’ contains both apples and oranges. Then by simple process of elimination, we know that the basket labeled as ‘Apples’ contains only oranges.
+
+Q. Best time to buy and sell a stock in a given week?
+Ans. Calculate maximum profit.
+
+Q. Left join vs right join ?
+Ans. 
+Theta Join. -  R1 and R2 are relations having attributes (A1, A2, ...., An) and (B1, B2,... Bn) such that attributes don't have anything in common. Theta join combines tuples from different relations provided they satisfy the theta condition.
+
+Natural Join - Natural join does not use any comparison operator. It does not concatenate the way a cartesian product does. We can perform  a natural join only if there is atleast one common attribute that exist between two relations. In addition, attributes mush have the same name and domain.
+
+Left Outer join - All the tuples from the left relation, R, are included in the resulting relation. If there are tuples in R without any matching tuple in the right relation S, then the S-attributes of the resulting relation re made NULL.
+
+Right outer join - All the tuples form the Right relation, S, are included in the resulting relation. If there are tuples in S without any matching tuple in R, then the R-attributes of resulting relation are made NULL.
+
+Full Outer Join - All the tuples from both participating relations are included in the resulting relation. If there are no matching tuples for both relations, their respective unmatched attributes are made NULL.
+
+
+Q. C++: operator overloading, maps in c++, copy constructor, classes ?
+Ans. C++ allows you to specify more than one defination for a function name or an operator in the same scope, which is called function overloading or operator overloading. Overloaded operators are functions with special names the keyword operator followed by the symbol for the operator being defined. Like any other function, an overloaded operator has a return type and a parameter list.
+The copy constructor is a constructor which creates an object by initializing it with an object of the same class, which has been created previously.
+
+Initialize one object from another of the same type.
+Copy an object to pass it as an argument to a function.
+Copy an object to return it from a function.
+
+
+
+
+Q. Describe how hashmaps and hashsets and hashcodes work ?
+Ans. In Java, every class implicitly or explicitly provides a hashCode method, which digests the data stored in an instance of a class into a single hash value. This hash is used by other code when storing or manipulating the instance. A hashcode is a number generated from any object. That is what allows hashtable to retrieve values quickly. 
+
+Q. How to call a servelet in JSP?	
+Q. What is a difference between Get and post method ?
+Q. What is Inheritance, Polymorphism, and can you instantiate an abstract class?
+Q. In Java, What would you change in a class to make it abstract ?
+Q. What functions are automatically provided when you create a class?
+Q. When would you use a pointer and a reference ?
+Q. What is the difference between pass by reference and pass by value?
+Q. What is machine learning ?
+Q. String program to shorten a string removing repeated characters?
+Q. How to design and implement a hashtable ?
+Q. SQL joins and aggregate ?
+Q. Find the top 5 high frequency words in a file ?
+Q. Difference between a string buffer and a string builder ?
+Q. How to make an ordered list in HTML ?
+Q. What is a selector in CSS ?
+Q. How do you implement mulitiple inheritance in Java?s
+Q. What is an inner class ?
+Q. Reverse a link list ?
+Q. How to read a file and compare its content ?Design a spiral matrix ?
+Q. Fibonacci series ?
+Q. Square root of a number ?
+Q. Implement a linked list?
+Q. SQL indexing ?
+Q. How polymorphism and inheritance work in Java?
+Q. Search Algorithms ?
+Q. Explain Semaphores ?
+Q. Difference between list and array ?
+Q. Mutual Exclusion and Maximum limit of Threads ?
+Q. Best sorting algorithm, justify your answer ?
+Q. What is a process ? (OS)
+Q. What is virtual memory ?
+Q. How to reverse a string?
+Q. How does JVM works?
+Q. Java Synchronzed?
+Q. Explain type of indexes ?
+Q. Difference between inner and outer join ?
+Q. What is DDOS ?
+Q. How to balance a BST ? 
+Q. What is the time complexity of a heap map ?
+Q. BFS and DFS?
+Q. Difference between Arrays and Vectors?
+Q. Linked list traversal?
+Q. How would you identify cyclic reference in Java?
+Q. 
+

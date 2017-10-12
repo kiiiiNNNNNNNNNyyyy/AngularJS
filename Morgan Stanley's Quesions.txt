@@ -1,0 +1,213 @@
+Q. Do you know CPM System? (Non-Technical)
+Ans. Corporate performance management. Its a term that describes the methodologies, metrics, processes and systems uesd to monitor and manage the business performance, of an enterprise.
+
+Q. How do you use an Interface? When do you use an interface and when would you use abstraction?
+Ans. By using the implements keyword. 
+
+Q. Can you implement quicksort algorithm ?
+Ans. Using a pivot and making a wall.
+
+Q. Implement two stacks using one array ?
+Ans. The idea is to start two stacks from two extreme corners of arr[]. stack1 starts from the leftmost element, the first element in stack1 is pushed at index 0. the stack2 starts from the rightmost corner, the first element in stack2 is pushed at index(n-1). Both stack grow in opposite direction. To check for overflow, all we need to check is for space between top elements of both stacks.
+
+Q. Apples and Oranges in a basket problem ?
+Ans. Say you pick a fruit from the basket labeled ‘Apples and Oranges’. If this fruit is an apple, then we know that since the label is incorrect, this basket only contains apples. Now that we’ve determined that the basket marked as ‘Apples and Oranges’ only contains apples, we can figure out what the other baskets contain. If we look at the basket labeled as ‘Oranges’, we know that since the label is incorrect, this basket either has only apples in it or has both apples and oranges. Since we’ve already established that the basket labeled ‘Apples and Oranges’ contains only apples, we know that the basket labeled as ‘Oranges’ contains both apples and oranges. Then by simple process of elimination, we know that the basket labeled as ‘Apples’ contains only oranges.
+
+Q. Best time to buy and sell a stock in a given week?
+Ans. Calculate maximum profit.
+
+Q. Left join vs right join ?
+Ans. 
+Theta Join. -  R1 and R2 are relations having attributes (A1, A2, ...., An) and (B1, B2,... Bn) such that attributes don't have anything in common. Theta join combines tuples from different relations provided they satisfy the theta condition.
+
+Natural Join - Natural join does not use any comparison operator. It does not concatenate the way a cartesian product does. We can perform  a natural join only if there is atleast one common attribute that exist between two relations. In addition, attributes mush have the same name and domain.
+
+Left Outer join - All the tuples from the left relation, R, are included in the resulting relation. If there are tuples in R without any matching tuple in the right relation S, then the S-attributes of the resulting relation re made NULL.
+
+Right outer join - All the tuples form the Right relation, S, are included in the resulting relation. If there are tuples in S without any matching tuple in R, then the R-attributes of resulting relation are made NULL.
+
+Full Outer Join - All the tuples from both participating relations are included in the resulting relation. If there are no matching tuples for both relations, their respective unmatched attributes are made NULL.
+
+
+Q. C++: operator overloading, maps in c++, copy constructor, classes ?
+Ans. C++ allows you to specify more than one defination for a function name or an operator in the same scope, which is called function overloading or operator overloading. Overloaded operators are functions with special names the keyword operator followed by the symbol for the operator being defined. Like any other function, an overloaded operator has a return type and a parameter list.
+The copy constructor is a constructor which creates an object by initializing it with an object of the same class, which has been created previously.
+
+
+Q. Describe how hashmaps and hashsets and hashcodes work ?
+Ans. In Java, every class implicitly or explicitly provides a hashCode method, which digests the data stored in an instance of a class into a single hash value. This hash is used by other code when storing or manipulating the instance. A hashcode is a number generated from any object. That is what allows hashtable to retrieve values quickly. 
+
+Q. How to call a servelet in JSP?
+Ans. use <jsp:include page="/serveletURL" />
+It's however usually the other way round. You call the servlet which in turn forwards to the JSP to display the results. Create a Servlet which does something like following in doGet() method.
+
+request.setAttribute("result", "This is the result of the servlet call");
+request.getRequestDispatcher("/WEB-INF/result.jsp").forward(request, response);
+
+
+Q. What is a difference between Get and post method ?
+Ans. Get - Requests data from a specified source. 
+	POST - Submits data to  be processed to a specified resource. 
+
+	GET requests remain browser's history.
+	POST requests do not remain in browser's history.
+
+	GET requests can be bookmarked.
+	POST requests cannot be bookmarked.
+
+	GET requeests have restrictions on data length.
+	POST requests have no restrictions on data length. 
+
+	GET requests can be cached.
+	POST requests cannot be cached.
+
+Q. What is Inheritance, Polymorphism, and can you instantiate an abstract class?
+Ans. You can't instantiate your abstract class, however you can instantiate a concrete subclass of your abstract class.
+Anonymous Inner Class
+An inner class declared without a class name is known as an anonymous inner class. In case of anonymous inner classes, we declare and instantiate them at the same time. Generally, they are used whenever you need to override the method of a class or an interface
+
+Q. In Java, What would you change in a class to make it abstract ?
+Abtract keyword
+
+Q. What functions are automatically provided when you create a class?
+Ans Contructor.
+
+Q. When would you use a pointer and a reference ?
+Ans. Difference between a pointer and a reference. 
+A pointer can be reasigned any number of times while a reference cannot be re-seated after binding.
+Pointer can point nowhere, whereas reference always refer to an object.
+You can't take the address of a reference like you can with pointers.
+
+Use references in function parameters and return types to define useful and self-documenting interfaces.
+Use pointers to implement algorithms and data structures.
+
+
+Q. What is the difference between pass by reference and pass by value?
+Ans. When a parameter is passed by reference, the caller and the callee use the same variable for the parameter. If the callee modifies the parameter variable, the effect is visible tp the calller variable.
+
+When a parameter is passed by value, the caller and the callee have two independent variables with the same value. If the callee modifies the parameter variable, the effect is not visible to the caller.
+
+Real pass by reference is impossible in java. Java passes everything by value, including references. but you can simulate it with container object.
+
+Q. What is machine learning ?
+Ans. Machine learning is a field of computer science that gives computers the ability to learn without being explicitly programmed.
+
+Q. String program to shorten a string removing repeated characters?
+Ans.Leetcode
+
+Q. How to design and implement a hashtable ?
+Ans Github
+
+Q. SQL joins and aggregate ?
+Ans. Agregate - AVG, COUNT, MIN, MAX, SUM
+
+Q. Find the top 5 high frequency words in a file ?
+Ans. Solved
+
+Q. Difference between a string buffer and a string builder ?
+Ans. Website
+
+Q. How to make an ordered list in HTML ?
+Ans ol tag
+
+Q. What is a selector in CSS ?
+Ans. Id', classes, predefined tags
+
+Q. How do you implement mulitiple inheritance in Java?
+Ans. 
+
+Q. What is an inner class ?
+Ans. Nested Classes. Advantages.
+Nested classes represent a special type of relationship that is it can access all the members (data members and methods) of outer class including private.
+
+Nested classes are used to develop more readable and maintainable code because it logically group classes and interfaces in one place only.
+
+Code Optimization: It requires less code to write
+
+Q. Reverse a link list ?
+Ans. Node reverse(Node node) {
+        Node prev = null;
+        Node current = node;
+        Node next = null;
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        node = prev;
+        return node;
+    }		
+
+Q. How to read a file and compare its content ?Design a spiral matrix ?
+Ans. geksforgeeks
+ 	4 variables
+
+Q. Fibonacci series ?
+Ans. public static long fibonacci(long number) {
+    if ((number == 0) || (number == 1)) // base cases
+      return number;
+    else
+      // recursion step
+      return fibonacci(number - 1) + fibonacci(number - 2);
+  }
+
+Q. Square root of a number ?
+Ans.
+
+	sqrt(n+1) = ( sqrt(n) + num/squrt(n) )/ 2.0
+
+    public static double sqrt(int number) {
+	double t;
+ 
+	double squareRoot = number / 2;
+ 
+	do {
+		t = squareRoot;
+		squareRoot = (t + (number / t)) / 2;
+	} while ((t - squareRoot) != 0);
+ 
+	return squareRoot;
+
+
+Q. Implement a linked list?
+Ans - Github.
+
+Q. SQL indexing ?
+Q. How polymorphism and inheritance work in Java?
+Q. Search Algorithms ?
+
+Q. Explain Semaphores ?
+Ans. Semaphores is a variable or abstract data type used to control access to a common resource by mutiple processes in a concurrent system.
+restricted to the values 0 and 1 (or locked/unlocked, unavailable/available) are called binary semaphores and are used to implement locks.
+
+Q. Difference between list and array ?
+Ans. 
+ general (and in Java) an array is a data structure generally consisting of sequential memory storing a collection of objects.
+ List is an interface in Java, which means that it may have multiple implementations. One of these implementations is ArrayList, which is a class that implements the behavior of the List interface using arrays as the data structure.
+
+ Q. Difference between hashtable and hashmap.
+ Ans. Hashtable is synchronized, whereas HashMap is not. This makes HashMap better for non-threaded applications, as unsynchronized Objects typically perform better than synchronized ones.
+
+ Hashtable does not allow null keys or values.  HashMap allows one null key and any number of null values.
+
+One of HashMap's subclasses is LinkedHashMap, so in the event that you'd want predictable iteration order (which is insertion order by default), you could easily swap out the HashMap for a LinkedHashMap. This wouldn't be as easy if you were using Hashtable.
+
+Q. Mutual Exclusion and Maximum limit of Threads ?
+Q. Best sorting algorithm, justify your answer ?
+Q. What is a process ? (OS)
+Q. What is virtual memory ?
+Q. How to reverse a string?
+Q. How does JVM works?
+Q. Java Synchronzed?
+Q. Explain type of indexes ?
+Q. Difference between inner and outer join ?
+Q. What is DDOS ?
+Q. How to balance a BST ? 
+Q. What is the time complexity of a heap map ?
+Q. BFS and DFS?
+Q. Difference between Arrays and Vectors?
+Q. Linked list traversal?
+Q. How would you identify cyclic reference in Java?
+Q. 
+

@@ -11,3 +11,5 @@ All angular services starts with a '$' sign.
 Drectives - An instruction to angularjs to manipulate a piece of a DOM.
 
 The event loop - Anglar extends the javascript event loops like click, ketpress and all and also add some extended functionalities like watchers. 
+
+$scope is a big object that provides dependency injection. You can add to the scope.
